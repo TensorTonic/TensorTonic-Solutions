@@ -25,11 +25,7 @@ def stratified_split(X, y, test_size=0.2, rng=None):
         # Get indices for this class
         cls_indices = np.where(y == cls)[0]
         
-        # Shuffle within class
-        if rng is not None:
-            rng.shuffle(cls_indices)
-        else:
-            np.random.shuffle(cls_indices)
+        
         
         # Split
         test_indices.extend(cls_indices[:n_test])
